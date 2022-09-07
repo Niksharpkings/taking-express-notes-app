@@ -1,28 +1,24 @@
 const router = require('express').Router();
-const { createNewNote, deleteNote } = require('../../lib/notes');
-let { notesArray } = require('../../db/notes'); // get notes from db
+const { createNewNote: postNewNote, deleteNote: deleteANotes } = require('../../lib/notes');
+let { notesArray: noteArr } = require('../../db/notes'); // get notes from db
 
 // notes are available at api/notes in JSON 
-router.get('/notes', (req, res) => { // get all notes
-  let results = notesArray; // get all notes from the notesArray
-  res.json(results); // send back the notes array
+router.get('/notes', (_request, response) => { // get all notes
+  const results = noteArr; // get all notes from the notesArray
+  response.json(results); // send back the notes array
 }); // end of GET /notes
 
-router.post('/notes', (req, res) => { // create a new note
+router.post('/notes', (request, response) => { // create a new note
   // set id based on what the next index of the array will be
-  if(notesArray){
-  req.body.id = notesArray.length.toString();  // convert to string
-  } else {
-    req.body.id = 0
-  } // if the array is empty, set the id to 0
-  res.json(createNewNote(req.body, notesArray)); // create new note and return it in JSON
+  request.body.id = noteArr ? noteArr.length.toString() : 0;
+  response.json(postNewNote(request.body, noteArr)); // create new note and return it in JSON
 }); // end of post route
 
 // Route parameters :id
-router.delete('/notes/:id', async (req, res) => { // async function to delete note
-  const { id } = req.params // get id from params
-  notesArray = await deleteNote(id, notesArray); // delete note
-  res.json(notesArray); // send back updated notes array
+router.delete('/notes/:id', async (request, response) => { // async function to delete note
+  const { id } = request.params // get id from params
+  noteArr = await deleteANotes(id, noteArr); // delete note
+  response.json(noteArr); // send back updated notes array
 }); // end delete note
 
 module.exports = router; // export router

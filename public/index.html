@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv>
   <title>Note Taker</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.3/flatly/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/css/bootstrap.min.css"
+    integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
-
 <body>
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Note Taker
+    <a id="navbarId" class="navbar-brand" href="/"> Express Note Taker
     </a>
   </nav>
   <div class="container">
-    <div style="margin-top: 80px;" class="jumbotron text-center">
-      <h1 class="display-4">Note Taker <span role="img" aria-label="Memo">📝</span></h1>
-      <h4 class="mt-4">Take notes with Express</h4>
-      <a class="btn btn-primary btn-lg mt-4" href="/notes" role="button">Get Started</a>
+    <div id="jumbotronId" class="jumbotron text-center">
+      <h1 class="display-5">
+        <span role="img" aria-label="Note Book">
+          📓
+        </span>
+        Express Note Writer
+        <span role="img" aria-label="Note Book">
+          📓
+        </span>
+      </h1>
+      <a class="btn btn-primary btn-lg mt-4" href="/notes" role="button">Start Here</a>
+      <h3 id="poweredbyID" class="mt-4">Powered by Express.js and Heroku</h3>
     </div>
   </div>
   <script src="/assets/js/script.js"></script>
 </body>
-
 </html>

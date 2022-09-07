@@ -4,7 +4,13 @@ An application called Note Taker that can be used to write and save notes. This 
 
 The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
+#Install
+```
 run npm i
+```
+
+#run
+<code>npm run demon</code>
 
 localhost:3001 defualt
 
@@ -14,3 +20,8 @@ https://infinite-lake-99614.herokuapp.com/
 uses express.js
 
 ![image](https://user-images.githubusercontent.com/67552318/182499534-13e1eb6c-2fc5-4491-b57c-90db3a30e96e.png)
+
+##Starter-Code:
+- ![Xander Rapstine](https://github.com/Xandromus)
+- ![John McCambridge](https://github.com/nol166)
+- ![coding bootCamp code](https://github.com/coding-boot-camp/miniature-eureka)

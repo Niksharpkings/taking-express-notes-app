@@ -13,13 +13,13 @@ if (window.location.pathname === '/notes') {
 }
 
 // Show an element
-const show = (elem) => {
-  elem.style.display = 'inline';
+const show = (s) => {
+  s.style.display = 'inline';
 };
 
 // Hide an element
-const hide = (elem) => {
-  elem.style.display = 'none';
+const hide = (h) => {
+  h.style.display = 'none';
 };
 
 // activeNote is used to keep track of the note in the textarea
@@ -33,13 +33,13 @@ const getNotes = () =>
     },
   });
 
-const saveNote = (note) =>
+const saveNote = (sn) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(note),
+    body: JSON.stringify(sn),
   });
 
 const deleteNote = (id) =>
@@ -58,12 +58,12 @@ const renderActiveNote = () => {
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
-  } else {
-    noteTitle.removeAttribute('readonly');
-    noteText.removeAttribute('readonly');
-    noteTitle.value = '';
-    noteText.value = '';
+    return;
   }
+  noteTitle.removeAttribute('readonly');
+  noteText.removeAttribute('readonly');
+  noteTitle.value = '';
+  noteText.value = '';
 };
 
 const handleNoteSave = () => {
@@ -118,12 +118,12 @@ const handleRenderSaveBtn = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
-  let jsonNotes = await notes.json();
+  const jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
 
-  let noteListItems = [];
+  const noteListItems = [];
 
   // Returns HTML element with or without a delete button
   const createLi = (text, delBtn = true) => {

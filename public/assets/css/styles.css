@@ -1,19 +1,40 @@
+@charset "US-ASCII";
+
+* {
+  font-family: 
+  'Dancing Script',
+    cursive,
+    bembo,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
+ }
 
 .save-note {
   display: none;
 }
 
-.icons i {
-  margin-left: 15px;
-  margin-right: 15px;
+.icons em {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 0;
   font-size: 1.5rem;
-  cursor: pointer;
+  cursor: cell;
 }
 
 .note-textarea,
@@ -75,4 +96,33 @@ body {
   border-right: none;
   padding: 20px;
   cursor: pointer;
+}
+
+
+#jumbotronId {
+  margin-top: 80px;
+  cursor: default;
+}
+
+#navbarId {
+  margin: 20px;
+  font-size: xx-large;
+  color: yellow;
+}
+
+h3 {
+  color: blue;
+  cursor: default;
+}
+
+.btn {
+  cursor: crosshair;
+}
+
+.navbar-brand {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 0;
+    font-size: 1.5rem;
+    cursor: cell;
 }
